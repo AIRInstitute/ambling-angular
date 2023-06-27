@@ -1,13 +1,25 @@
 <div class="row">
-  <div class="col-4">
-    <div>ICONO</div>
+  <div class="bg-app-menu">
+    <div class="d-flex justify-content-center pt-1">
+      <div class="d-flex justify-content-center"><img width="75%" src="../../../assets/img/logo_ambling_icon_white.png" /></div>
+    </div>
+
+
+    <div class="my-3 text-center">
+      <div class="py-2" (mouseover)="showTextDash=true" (mouseout)="showTextDash=false">
+        <mat-icon class="icon-nav">home</mat-icon><span *ngIf="showTextDash">DASHBOARD</span></div>
+      <div class="py-2" (mouseover)="showTextConfig=true" (mouseout)="showTextConfig=false">
+        <mat-icon class="icon-nav">settings</mat-icon><span *ngIf="showTextConfig">CONFIGURACIÓN</span></div>
+    </div>
+
   </div>
-  <div class="col-8" class="bg-app-bar">
+  <div class="bg-app-bar">
     <div class="d-flex justify-content-center">
-      <div style="width: 40%" class="d-flex justify-content-center"><img width="70%" src="../../../assets/img/logo-AIR.png" /></div>
+      <div class="d-flex justify-content-center"><img width="10%" src="../../../assets/img/logo_ambling.png" /></div>
     </div>
   </div>
 </div>
+
 <!--
   <mat-toolbar class="bg-app-bar">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">

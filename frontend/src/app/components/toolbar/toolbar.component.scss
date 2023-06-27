@@ -1,3 +1,16 @@
-.bg-app-bar{
+.bg-app-menu {
+  position: absolute;
+  width: 5%;
   background-color: #f08013;
+}
+
+.bg-app-bar{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.icon-nav {
+  transform: scale(1.5);
+  color: #ffffff;
 }

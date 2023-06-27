@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DialogLogoutComponent } from '../dialogs/dialog-logout/dialog-logout.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,32 +8,18 @@ import { DialogLogoutComponent } from '../dialogs/dialog-logout/dialog-logout.co
 })
 export class ToolbarComponent {
 
-  userLocal: any
-  showFiller:boolean = false;
+  showTextDash: boolean;
+  showTextConfig: boolean;
 
   constructor(
     private router: Router,
-    public dialog: MatDialog,
   ){
-    this.userLocal = JSON.parse(localStorage.getItem('infoUser') || '{}');
+    this.showTextDash = false;
+    this.showTextConfig = false;
   }
 
   menuNavRoot(root: string){
     this.router.navigate(['/'+root]);
   }
 
-  openLogout(): void{
-    const dialogRef = this.dialog.open(DialogLogoutComponent, {
-      width: '450px',
-      data: {title: "CERRAR SESIÓN", text: "¿Está seguro de cerrar la sesión de usuario actual?"},
-      disableClose: true,
-      hasBackdrop: true
-    });
-    dialogRef.afterClosed().subscribe(res => {
-      if(res){
-        window.localStorage.removeItem('infoUser');
-        this.router.navigate(['/login']);
-      }
-    })
-  }
 }
