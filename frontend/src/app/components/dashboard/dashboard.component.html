@@ -1,1 +1,35 @@
-<p>dashboard works!</p>
+<!-- GRAPH: Water Consumption -->
+<div class="row mt-4 d-flex justify-content-center">
+  <div class="col-11">
+    <apx-chart
+      [series]="chartOptionsWaterConsumption.series"
+      [chart]="chartOptionsWaterConsumption.chart"
+      [xaxis]="chartOptionsWaterConsumption.xaxis"
+      [stroke]="chartOptionsWaterConsumption.stroke"
+      [colors]="chartOptionsWaterConsumption.colors"
+      [dataLabels]="chartOptionsWaterConsumption.dataLabels"
+      [legend]="chartOptionsWaterConsumption.legend"
+      [markers]="chartOptionsWaterConsumption.markers"
+      [grid]="chartOptionsWaterConsumption.grid"
+      [yaxis]="chartOptionsWaterConsumption.yaxis"
+      [title]="chartOptionsWaterConsumption.title"
+      [fill]="chartOptionsWaterConsumption.fill"
+      [tooltip]="chartOptionsWaterConsumption.tooltip"
+    ></apx-chart>  
+  </div>
+</div>
+
+<!-- GRAPH: Monthly Consumption -->
+<div class="row d-flex justify-content-center">
+  <div class="col-11">
+    <apx-chart
+      [series]="chartOptionsMonthlyConsumption.series"
+      [chart]="chartOptionsMonthlyConsumption.chart"
+      [xaxis]="chartOptionsMonthlyConsumption.xaxis"
+      [yaxis]="chartOptionsMonthlyConsumption.yaxis"
+      [title]="chartOptionsMonthlyConsumption.title"
+      [colors]="chartOptionsMonthlyConsumption.colors"
+    ></apx-chart>    
+  </div>
+</div>
+

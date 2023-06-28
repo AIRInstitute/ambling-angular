@@ -2,3 +2,29 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* TEXT */
+.text-base{
+    font-family: 'Roboto';
+    letter-spacing: 0.7px;
+}
+.text-base-title{
+    font-family: 'Roboto';
+    font-weight: bold;
+    letter-spacing: 0.7px;
+}
+.size-12 {
+    font-size: 12px;
+}
+.size-20 {
+    font-size: 20px;
+}
+
+/* PALLETS COLORS */
+.color-1 {
+    color: #f08013;
+}
+
+.dfsd {
+    color: #4b2c0d;
+}

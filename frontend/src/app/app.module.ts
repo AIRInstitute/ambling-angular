@@ -11,16 +11,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
+import { HomeLayoutComponent } from './components/layouts/home-layout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ConfigComponent } from './components/config/config.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { DialogLogoutComponent } from './components/dialogs/dialog-logout/dialog-logout.component';
 import { DialogErrorComponent } from './components/dialogs/dialog-error/dialog-error.component';
 
+import { NgApexchartsModule } from "ng-apexcharts";
+
 @NgModule({
   declarations: [
     AppComponent,
+    HomeLayoutComponent,
     DashboardComponent,
     ConfigComponent,
     ToolbarComponent,
@@ -36,7 +41,9 @@ import { DialogErrorComponent } from './components/dialogs/dialog-error/dialog-e
     MatButtonModule,
     MatMenuModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
