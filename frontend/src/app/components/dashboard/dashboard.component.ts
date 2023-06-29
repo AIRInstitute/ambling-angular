@@ -29,6 +29,10 @@ export type ChartOptions = {
   fill: ApexFill;
 };
 
+interface Time {
+  value: string;
+}
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -39,6 +43,16 @@ export class DashboardComponent {
 
   public chartOptionsWaterConsumption: Partial<ChartOptions> | any;
   public chartOptionsMonthlyConsumption: Partial<ChartOptions> | any;
+
+  selectedTimeWater: string = "Last 6 months";
+  selectedTimeMonthly: string = "Last 6 months";
+  timeFilter: Time[] = [
+    {value: 'Today'},
+    {value: 'Last week'},
+    {value: 'Last 6 months'},
+    {value: 'Last year'},
+    {value: 'all'},
+  ];
 
   ngOnInit(): void {
     this.initializeChartWaterConsumption();
@@ -58,7 +72,7 @@ export class DashboardComponent {
         }
       ],
       chart: {
-        height: 400,
+        height: 330,
         type: "area",
         dropShadow: {
           enabled: true,
@@ -69,23 +83,15 @@ export class DashboardComponent {
           opacity: 0.2
         }
       },
-      colors: ["#f08013", "#4b2c0d"],
+      colors: ["#000000", "#acc4de"],
       dataLabels: {
         enabled: true
       },
       stroke: {
         curve: "smooth"
       },
-      title: {
-        text: "WATER CONSUMPTION (Lt.)",
-        align: "center"
-      },
       grid: {
-        borderColor: "#f5b371",
-        row: {
-          colors: ["#f1d6ba", "transparent"], // takes an array which will be repeated on columns
-          opacity: 0.5
-        }
+        borderColor: "#c2deff"
       },
       markers: {
         size: 1
@@ -126,14 +132,10 @@ export class DashboardComponent {
           data: [12784, 10547, 11658, 14526, 19854, 20047]
         }
       ],
-      colors: ["#f08013", "#4b2c0d"],
+      colors: ["#000000", "#acc4de"],
       chart: {
-        height: 400,
+        height: 330,
         type: "bar"
-      },
-      title: {
-        text: "Monthly CONSUMPTION (Lt.)",
-        align: "center"
       },
       xaxis: {
         categories: ["Nov", "Dic",  "Jan",  "Feb",  "Mar",  "Apr"],

@@ -1,4 +1,19 @@
 <!-- GRAPH: Water Consumption -->
+<div class="row ma-0 pa-0">
+  <div class="col-10 ma-0 pa-0 title-graph">
+    WATER CONSUMPTION (Lt.)
+  </div>
+  <div class="col-2 ma-0 pa-0">
+    <mat-form-field>
+      <mat-label>Seleccionar filtro</mat-label>
+      <mat-select [(ngModel)]="selectedTimeWater" name="time">
+        <mat-option *ngFor="let time of timeFilter" [value]="time.value">
+          {{time.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
 <div class="row mt-4 d-flex justify-content-center">
   <div class="col-11">
     <apx-chart
@@ -12,7 +27,6 @@
       [markers]="chartOptionsWaterConsumption.markers"
       [grid]="chartOptionsWaterConsumption.grid"
       [yaxis]="chartOptionsWaterConsumption.yaxis"
-      [title]="chartOptionsWaterConsumption.title"
       [fill]="chartOptionsWaterConsumption.fill"
       [tooltip]="chartOptionsWaterConsumption.tooltip"
     ></apx-chart>  
@@ -20,6 +34,21 @@
 </div>
 
 <!-- GRAPH: Monthly Consumption -->
+<div class="row ma-0 pa-0">
+  <div class="col-10 ma-0 pa-0 title-graph">
+    Monthly CONSUMPTION (Lt.)
+  </div>
+  <div class="col-2 ma-0 pa-0">
+    <mat-form-field>
+      <mat-label>Seleccionar filtro</mat-label>
+      <mat-select [(ngModel)]="selectedTimeMonthly" name="time">
+        <mat-option *ngFor="let time of timeFilter" [value]="time.value">
+          {{time.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
 <div class="row d-flex justify-content-center">
   <div class="col-11">
     <apx-chart
@@ -27,7 +56,6 @@
       [chart]="chartOptionsMonthlyConsumption.chart"
       [xaxis]="chartOptionsMonthlyConsumption.xaxis"
       [yaxis]="chartOptionsMonthlyConsumption.yaxis"
-      [title]="chartOptionsMonthlyConsumption.title"
       [colors]="chartOptionsMonthlyConsumption.colors"
     ></apx-chart>    
   </div>
