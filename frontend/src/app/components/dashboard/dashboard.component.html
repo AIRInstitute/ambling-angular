@@ -5,7 +5,7 @@
   </div>
   <div class="col-2 ma-0 pa-0">
     <mat-form-field>
-      <mat-label>Seleccionar filtro</mat-label>
+      <mat-label>Select filter</mat-label>
       <mat-select [(ngModel)]="selectedTimeWater" name="time">
         <mat-option *ngFor="let time of timeFilter" [value]="time.value">
           {{time.value}}

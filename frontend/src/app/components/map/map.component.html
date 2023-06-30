@@ -1,1 +1,42 @@
-<p>map works!</p>
+<!-- INFO LEAFLET
+-> tutorial:
+https://www.youtube.com/watch?v=LBbGFnZwRXs&ab_channel=AnartzMugikaLedo-Desarrollo%26Formaci%C3%B3n
+
+-> install:
+npm i leaflet
+npm i @types/leaflet -D
+
+-> web leaflet:
+https://leafletjs.com/examples/quick-start/
+
+-> leaflet extras:
+https://leaflet-extras.github.io/leaflet-providers/preview/
+-->
+<div class="row d-flex justify-content-center">
+  <div class="col-11">
+    <div id="map"></div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-4">
+    <div id="mapLeft"></div>
+  </div>
+  <div class="col-4">
+    <div id="mapRight"></div>
+  </div>
+  <div class="col-2">
+    <div class="panel-title text-base color-2">Coverage MAP</div>
+    <div class="mt-4">
+      <mat-form-field class="w-100">
+        <mat-label>Select filter</mat-label>
+        <mat-select [(ngModel)]="selectedCoverage" name="item">
+          <mat-option *ngFor="let item of listCoverageMap" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
