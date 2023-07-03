@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Map, tileLayer } from 'leaflet'
+import { Map, geoJson, polygon, tileLayer } from 'leaflet'
 
 @Component({
   selector: 'app-map',
@@ -32,7 +32,19 @@ export class MapComponent {
       tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: this.currentMaxZoom,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(this.map);      
+      }).addTo(this.map);     
+      
+      geoJson(polygonJson, {
+        onEachFeature: function (feature, layer){
+          layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+        },
+        style: {
+          fillColor: 'red',
+          fillOpacity: 1,
+          color: 'green'
+        }
+      }).addTo(this.map);
+
     }, 100);
   }
 
