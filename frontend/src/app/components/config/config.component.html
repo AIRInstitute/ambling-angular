@@ -1,0 +1,95 @@
+<div class="row bg-title-section text-base color-2">
+  <div class="col">
+    <div>USER MANAGEMENT</div>
+  </div>
+</div>
+
+<div class="row mt-4 d-flex justify-content-center text-base-title color-1 text-center">
+  <div class="col-2">
+    <div>Name</div>
+  </div>
+  <div class="col-2">
+    <div>Email</div>
+  </div>
+  <div class="col-2">
+    <div>Roles/Privilages</div>
+  </div>
+  <div class="col-2 pb-2">
+    <div>Status</div>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+
+<div class="row mt-4 d-flex justify-content-center text-base-title color-1 text-center" *ngFor="let item of listAllUsers" [id]="item.id">
+  <div class="col-2">
+    <div>{{ item.name }}</div>
+  </div>
+  <div class="col-2">
+    <div>{{ item.email }}</div>
+  </div>
+  <div class="col-2">
+    <div>
+      <mat-form-field class="w-100">
+        <mat-label>Select Role/Privilage</mat-label>
+        <mat-select [(ngModel)]="item.role" name="item">
+          <mat-option *ngFor="let itemRole of listRolesPrivilages" [value]="itemRole">
+            {{itemRole}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-2">
+    <div>
+      <mat-form-field class="w-100">
+        <mat-label>Select Status</mat-label>
+        <mat-select [(ngModel)]="item.status" name="item">
+          <mat-option *ngFor="let itemStatus of listStatus" [value]="itemStatus">
+            {{itemStatus}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<mat-divider></mat-divider>
+<div class="row mt-4 d-flex justify-content-center text-base-title color-1 text-center">
+  <div class="col-2">
+    <div>Contract No</div>
+  </div>
+  <div class="col-2">
+    <div>DNI No</div>
+  </div>
+  <div class="col-2">
+    <div>WM Serial</div>
+  </div>
+  <div class="col-2 pb-2">
+    <div>Status</div>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+
+<div class="row mt-4 d-flex justify-content-center text-base-title color-1 text-center" *ngFor="let item of listAllContractNo" [id]="item.id">
+  <div class="col-2">
+    <div>{{ item.name }}</div>
+  </div>
+  <div class="col-2">
+    <div>{{ item.dni }}</div>
+  </div>
+  <div class="col-2">
+    <div>{{ item.serial }}</div>
+  </div>
+  <div class="col-2">
+    <div>
+      <mat-form-field class="w-100">
+        <mat-label>Select Status</mat-label>
+        <mat-select [(ngModel)]="item.status" name="item">
+          <mat-option *ngFor="let itemStatus of listStatusContract" [value]="itemStatus">
+            {{itemStatus}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

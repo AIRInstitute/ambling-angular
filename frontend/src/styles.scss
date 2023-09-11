@@ -1,0 +1,45 @@
+/* LEAFLET styles*/
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* TEXT */
+.text-base{
+    font-family: 'Roboto';
+    letter-spacing: 0.7px;
+}
+.text-base-title{
+    font-family: 'Roboto';
+    font-weight: bold;
+    letter-spacing: 0.7px;
+}
+.size-12 {
+    font-size: 12px;
+}
+.size-20 {
+    font-size: 20px;
+}
+
+/* PALLETS COLORS */
+.color-1 {
+    color: #f08013;
+}
+
+.color-2 {
+    color: #ffffff;
+}
+.color-3 {
+    color: #252525;
+}
+
+/* GENERAL */
+.bg-title-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #f08013;
+    font-size: 16px;
+}
