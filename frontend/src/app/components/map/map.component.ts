@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Map, geoJson, icon, marker, tileLayer } from 'leaflet';
-import { pruebaAlbertoJson } from '../../../assets/layersMap/prueba_alberto';
+import { mapRed } from '../../../assets/layersMap/red_antonio';
 
 const geojsonFeature = {
   type: 'Feature' as const,
@@ -33,8 +33,8 @@ export class MapComponent {
   public currentMaxZoom: number = 20;
 
   private mapL: any;
-  public currentLatL: number = 39.75621;
-  public currentLngL: number = -104.99404;
+  public currentLatL: number = 39.236043934318538;
+  public currentLngL: number = -6.288185696018949;
   private mapR: any;
   public currentLatR: number = 40.965045544659326;
   public currentLngR: number = -5.664169260781617;
@@ -92,6 +92,7 @@ export class MapComponent {
       for (const item of this.listMarkers) {
         marker([item.Lat, item.Lng]).addTo(this.map);
       }
+
     }, 100);
   }
 
@@ -108,7 +109,7 @@ export class MapComponent {
         }
       ).addTo(this.mapL);
 
-      geoJson(geojsonFeature, {
+      geoJson(mapRed, {
         onEachFeature: function (feature, layer){
           layer.bindPopup('<b>This is a </b>' + feature.properties.name)
         },
@@ -118,6 +119,8 @@ export class MapComponent {
           color: 'green'
         }
       }).addTo(this.mapL);
+
+      //geoJson(mapRed).addTo(this.mapL);
 
     }, 100);
   }
